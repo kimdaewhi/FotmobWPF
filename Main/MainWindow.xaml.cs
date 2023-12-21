@@ -1,5 +1,4 @@
-﻿using Main.Models;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -70,7 +69,7 @@ namespace Main
             if (response.IsSuccessStatusCode)
             {
                 var jsonString = await response.Content.ReadAsStringAsync();
-                var player = JsonConvert.DeserializeObject<Player>(jsonString);
+                var player = JsonConvert.DeserializeObject<DmManager.Player>(jsonString);
 
                 // 반환된 player 객체를 사용합니다.
                 Debug.WriteLine($"Player Name: {player.Name}, Role: {player.Role}");

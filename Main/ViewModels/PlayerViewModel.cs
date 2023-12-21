@@ -1,5 +1,4 @@
-﻿using Main.Models;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 
@@ -7,9 +6,9 @@ namespace Main.ViewModels
 {
     public class PlayerViewModel : INotifyPropertyChanged
     {
-        private ObservableCollection<Player> _players;
+        private ObservableCollection<DmManager.Player> _players;
 
-        public ObservableCollection<Player> Players
+        public ObservableCollection<DmManager.Player> Players
         {
             get { return _players; }
             set
@@ -24,7 +23,7 @@ namespace Main.ViewModels
         public void AddPlayer(string id, string name)
         {
             // 임의의 데이터 생성 (예시로 간략하게 작성)
-            Player newPlayer = new Player
+            DmManager.Player newPlayer = new DmManager.Player
             {
                 Id = id,
                 Name = name,
@@ -34,7 +33,7 @@ namespace Main.ViewModels
             // 만약 Players가 null이면 초기화
             if (Players == null)
             {
-                Players = new ObservableCollection<Player>();
+                Players = new ObservableCollection<DmManager.Player>();
             }
 
             // 데이터 추가
@@ -48,7 +47,7 @@ namespace Main.ViewModels
         {
             // JSON 데이터 파싱하여 Players에 할당
             // 예시로 간략히 작성한 코드입니다.
-            Players = JsonConvert.DeserializeObject<ObservableCollection<Player>>(jsonData);
+            Players = JsonConvert.DeserializeObject<ObservableCollection<DmManager.Player>>(jsonData);
         }
 
         // INotifyPropertyChanged 구현을 위한 코드
