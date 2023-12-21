@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DmManager;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Permissions;
@@ -26,20 +28,25 @@ namespace UserControls
             }
         }
 
-        private List<PlayerOrClubItem> suggestionList = new List<PlayerOrClubItem>
-        {
-            new PlayerOrClubItem("282775", "Resources\\players\\282775.png", "Jorginho" ),
-            new PlayerOrClubItem("434325", "Resources\\players\\434325.png", "Thomas Partey" ),
-            new PlayerOrClubItem("576165", "Resources\\players\\576165.png", "Gabriel Jesus" ),
-            new PlayerOrClubItem("961995", "Resources\\players\\961995.png", "Bukayo Saka" ),
-            new PlayerOrClubItem("1021586", "Resources\\players\\1021586.png", "Gabriel Martinelli" ),
-        };
+        //private List<PlayerOrClubItem> suggestionList = new List<PlayerOrClubItem>
+        //{
+        //    new PlayerOrClubItem("282775", "Resources\\players\\282775.png", "Jorginho" ),
+        //    new PlayerOrClubItem("434325", "Resources\\players\\434325.png", "Thomas Partey" ),
+        //    new PlayerOrClubItem("576165", "Resources\\players\\576165.png", "Gabriel Jesus" ),
+        //    new PlayerOrClubItem("961995", "Resources\\players\\961995.png", "Bukayo Saka" ),
+        //    new PlayerOrClubItem("1021586", "Resources\\players\\1021586.png", "Gabriel Martinelli" ),
+        //};
+
+        private List<DmManager.Player> suggestionList = new List<DmManager.Player>();
 
 
         public AutoComplete()
         {
             InitializeComponent();
+
+            LoadPlayers();
         }
+
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             txtInput.Focus();
@@ -49,8 +56,9 @@ namespace UserControls
         private void autoComplete_TextChanged(object sender, TextChangedEventArgs e)
         {
             string inputText = txtInput.Text.ToLower();
-            // List<string> filteredList = suggestionList.Where(s => s.ToLower().Contains(inputText)).ToList();
-            List<PlayerOrClubItem> filteredList = suggestionList.Where(item => item.Name.ToLower().Contains(inputText)).ToList();
+            
+            // List<PlayerOrClubItem> filteredList = suggestionList.Where(item => item.Name.ToLower().Contains(inputText)).ToList();
+            List<DmManager.Player> filteredList = suggestionList.Where(item => item.Name.ToLower().Contains(inputText)).ToList();
 
             listSuggestions.ItemsSource = filteredList;
 
@@ -97,7 +105,7 @@ namespace UserControls
                         if (listSuggestions.SelectedIndex != -1)
                         {
                             // 선택된 값을 TextInput에 입력
-                             var selectedItem = (PlayerOrClubItem)listSuggestions.SelectedItem;
+                             var selectedItem = (DmManager.Player)listSuggestions.SelectedItem;
                             txtInput.Text = selectedItem.Name;
 
                             // 커서 위치를 선택된 값의 끝으로 이동
@@ -105,7 +113,7 @@ namespace UserControls
                             listSuggestions.Visibility = Visibility.Collapsed;
 
                             // ID = selectedItem.ID;
-                            OnIDUpdated(selectedItem.ID);
+                            OnIDUpdated(selectedItem.Id);
                         }
                         break;
                     default:
@@ -139,6 +147,13 @@ namespace UserControls
         {
             this.txtInput.Clear();
             this.ID = string.Empty;
+        }
+
+
+        private async void LoadPlayers()
+        {
+            string? jsonStr = await DmManager.ConnectionMain.GetPlayerList();
+            suggestionList = JsonConvert.DeserializeObject<List<DmManager.Player>>(jsonStr);
         }
 
         

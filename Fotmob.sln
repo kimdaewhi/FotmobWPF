@@ -4,8 +4,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Main", "Main\Main.csproj", "{91E27AE9-7411-467E-B3D7-46317324C1E4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{570F9127-FEC8-4E5F-B5C7-64842FB474D4} = {570F9127-FEC8-4E5F-B5C7-64842FB474D4}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserControls", "UserControls\UserControls.csproj", "{2D0EC1B3-D02B-470D-8155-540BA59A96DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserControls", "UserControls\UserControls.csproj", "{2D0EC1B3-D02B-470D-8155-540BA59A96DC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{570F9127-FEC8-4E5F-B5C7-64842FB474D4} = {570F9127-FEC8-4E5F-B5C7-64842FB474D4}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DmManager", "DmManager\DmManager.csproj", "{570F9127-FEC8-4E5F-B5C7-64842FB474D4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +29,10 @@ Global
 		{2D0EC1B3-D02B-470D-8155-540BA59A96DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D0EC1B3-D02B-470D-8155-540BA59A96DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D0EC1B3-D02B-470D-8155-540BA59A96DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{570F9127-FEC8-4E5F-B5C7-64842FB474D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{570F9127-FEC8-4E5F-B5C7-64842FB474D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{570F9127-FEC8-4E5F-B5C7-64842FB474D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{570F9127-FEC8-4E5F-B5C7-64842FB474D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

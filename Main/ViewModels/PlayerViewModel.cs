@@ -52,7 +52,7 @@ namespace Main.ViewModels
         }
 
         // INotifyPropertyChanged 구현을 위한 코드
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         protected virtual void OnPropertyChanged(string propertyName)
         {
