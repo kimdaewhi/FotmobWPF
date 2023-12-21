@@ -1,0 +1,68 @@
+﻿<UserControl x:Class="UserControls.AutoComplete"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="50" d:DesignWidth="400" Height="150" Loaded="UserControl_Loaded">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <!-- 입력 텍스트 -->
+            <RowDefinition Height="Auto"/>
+            <!-- 필터 리스트 -->
+        </Grid.RowDefinitions>
+
+        <Border BorderBrush="Gray" BorderThickness="1">
+            <TextBox x:Name="txtInput" 
+                 Grid.Row="0"
+                 VerticalAlignment="Bottom"
+                 VerticalContentAlignment="Center"
+                 TextChanged="autoComplete_TextChanged" 
+                 FontFamily="NanumGothic" FontSize="17"
+                 PreviewKeyDown="txtInput_PreviewKeyDown">
+                <TextBox.Resources>
+                    <Style TargetType="TextBox">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="TextBox">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Image Source="Resources/search.png" Width="25" Height="25" Margin="5"/>
+                                        <ScrollViewer x:Name="PART_ContentHost" Grid.Column="1" />
+                                    </Grid>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </TextBox.Resources>
+            </TextBox>
+        </Border>
+
+        <ListBox x:Name="listSuggestions" Visibility="Collapsed" Grid.Row="1" Height="150" MouseLeftButtonUp="listSuggestions_MouseLeftButtonUp">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <!-- 원하는 높이로 설정 -->
+                    <Setter Property="Height" Value="40"/>
+                </Style>
+            </ListBox.ItemContainerStyle>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <!-- 이미지 -->
+                        <Image Source="{Binding ImageUrl}" Width="30" Height="30"/>
+
+                        <!-- 텍스트 -->
+                        <TextBlock Text="{Binding Name}" Margin="5,0,0,0" FontFamily="NanumGothic" FontSize="17" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <!--<ListBox x:Name="listSuggestions" Visibility="Collapsed" Height="150" Grid.Row="1" MinHeight="150"/>-->
+    </Grid>
+</UserControl>

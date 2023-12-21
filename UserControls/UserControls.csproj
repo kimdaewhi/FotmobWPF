@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\1021586.png" />
+    <None Remove="Resources\282775.png" />
+    <None Remove="Resources\434325.png" />
+    <None Remove="Resources\576165.png" />
+    <None Remove="Resources\776151.png" />
+    <None Remove="Resources\961995.png" />
+    <None Remove="Resources\search.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\players\1021586.png" />
+    <Resource Include="Resources\players\282775.png" />
+    <Resource Include="Resources\players\434325.png" />
+    <Resource Include="Resources\players\576165.png" />
+    <Resource Include="Resources\players\776151.png" />
+    <Resource Include="Resources\players\961995.png" />
+    <Resource Include="Resources\search.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>
