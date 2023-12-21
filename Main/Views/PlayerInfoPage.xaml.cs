@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DmManager;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,18 +23,27 @@ namespace Main.Views
     public partial class PlayerInfoPage : Page
     {
         private string _playerID;
-
+        Player _selectedPlayer;
 
         public PlayerInfoPage(string playerID)
         {
             InitializeComponent();
 
             this._playerID = playerID;
+            InitPlayerInfoAsync();
+            
         }
+
+        private async void InitPlayerInfoAsync()
+        {
+            _selectedPlayer = await ConnectionMain.GetPlayerDetail(_playerID);
+        }
+
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("플레이어 : " + _playerID);
+            MessageBox.Show("플레이어 : " + _selectedPlayer.Id + ", " + _selectedPlayer.Name + ", " + _selectedPlayer.Birth + ", " + _selectedPlayer.MarketValue);
         }
 
 

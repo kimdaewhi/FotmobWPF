@@ -22,20 +22,24 @@ namespace DmManager
         }
 
 
-        public static async void GetPlayerDetail(string playerID)
+        public static async Task<Player> GetPlayerDetail(string playerID)
         {
             HttpResponseMessage response = await _client.GetAsync($"http://13.124.254.65:8080/api/Players/details/{playerID}");
+            string jsonString = string.Empty;
             if (response.IsSuccessStatusCode)
             {
-                var jsonString = await response.Content.ReadAsStringAsync();
-                var player = JsonConvert.DeserializeObject<Player>(jsonString);
+                jsonString = await response.Content.ReadAsStringAsync();
+                Player? player = JsonConvert.DeserializeObject<Player>(jsonString);
 
                 // 반환된 player 객체를 사용합니다.
-                Debug.WriteLine($"Player Name: {player?.Name}, Role: {player?.Role}");
+                // Debug.WriteLine($"Player Name: {player?.Name}, Role: {player?.Role}");
+
+                return player;
             }
             else
             {
                 Debug.WriteLine($"Failed to fetch player. StatusCode: {response.StatusCode}");
+                return null;
             }
         }
 
