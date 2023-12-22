@@ -32,6 +32,6 @@
         <!--<ScrollViewer VerticalScrollBarVisibility="Auto">-->
         <Frame x:Name="ContentFrame" NavigationUIVisibility="Hidden" Width="1300" Height="700" Grid.Row="1" VerticalAlignment="Bottom"/>
         <!--</ScrollViewer>-->
-        <UserControls:AutoComplete x:Name="autoComplete" HorizontalAlignment="Left" Margin="325,31,0,0" VerticalAlignment="Top" Width="400" Height="190"/>
+        <UserControls:AutoComplete x:Name="autoComplete" HorizontalAlignment="Left" Margin="325,31,0,0" VerticalAlignment="Top" Width="400" Height="250"/>
     </Grid>
 </Window>
