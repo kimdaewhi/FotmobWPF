@@ -25,6 +25,9 @@ namespace Main.Views
         private string _playerID;
         Player _selectedPlayer;
 
+        // public string FormattedMarketValue => $"{(_selectedPlayer?.MarketValue ?? 0) / 1000000} M";
+        public string FormattedMarketValue = string.Empty;
+
         public PlayerInfoPage(string playerID)
         {
             InitializeComponent();
@@ -37,6 +40,7 @@ namespace Main.Views
         private async void InitPlayerInfoAsync()
         {
             _selectedPlayer = ConnectionMain.Instance.GetPlayerById(_playerID);
+            _selectedPlayer.MarketValue = (_selectedPlayer.MarketValue / 1000000);
             this.DataContext = _selectedPlayer;
         }
 
