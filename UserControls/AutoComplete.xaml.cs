@@ -37,6 +37,7 @@ namespace UserControls
             InitializeComponent();
 
             LoadPlayers();
+            
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
@@ -144,13 +145,16 @@ namespace UserControls
 
         private async void LoadPlayers()
         {
-            string? jsonStr = await DmManager.ConnectionMain.GetPlayerList();
+            //string? jsonStr = await DmManager.ConnectionMain.GetPlayerList();
 
-            // Image Uri 변경
-            string serverUrl = "http://13.124.254.65:8080/";
-            jsonStr = AddServerUrlToJson(jsonStr, serverUrl);
+            //// Image Uri 변경
+            //string serverUrl = "http://13.124.254.65:8080/";
+            //jsonStr = AddServerUrlToJson(jsonStr, serverUrl);
 
-            suggestionList = JsonConvert.DeserializeObject<List<Player>>(jsonStr);
+            //suggestionList = JsonConvert.DeserializeObject<List<Player>>(jsonStr);
+
+            await DmManager.ConnectionMain.Instance.LoadPlayersIfNeeded();
+            suggestionList = DmManager.ConnectionMain.Instance.GetPlayers();
         }
 
 

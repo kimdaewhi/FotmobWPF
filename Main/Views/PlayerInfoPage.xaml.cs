@@ -36,7 +36,7 @@ namespace Main.Views
 
         private async void InitPlayerInfoAsync()
         {
-            _selectedPlayer = await ConnectionMain.GetPlayerDetail(_playerID);
+            _selectedPlayer = ConnectionMain.Instance.GetPlayerById(_playerID);
             this.DataContext = _selectedPlayer;
         }
 

@@ -25,15 +25,18 @@ namespace Main
             ContentFrame.NavigationService.Navigate(mainPage);
         }
 
+
         private void Image_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
             Mouse.OverrideCursor = Cursors.Hand;
         }
 
+
         private void Image_MouseLeave(object sender, MouseEventArgs e)
         {
             Mouse.OverrideCursor = Cursors.Arrow;
         }
+
 
         private void Image_MouseDown(object sender, MouseButtonEventArgs e)
         {
@@ -45,6 +48,7 @@ namespace Main
             autoComplete.Clear();
             ContentFrame.NavigationService.Navigate(new Views.MainPage());
         }
+
 
         // Autocomplete의 ID 업데이트 여부 받는 콜백 함수
         private void AutoComplete_IDUpdated(object sender, string updatedID)
@@ -58,7 +62,6 @@ namespace Main
             }
 
         }
-
 
     }
 }
