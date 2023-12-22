@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Permissions;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -47,8 +48,7 @@ namespace UserControls
         private void autoComplete_TextChanged(object sender, TextChangedEventArgs e)
         {
             string inputText = txtInput.Text.ToLower();
-            
-            // List<PlayerOrClubItem> filteredList = suggestionList.Where(item => item.Name.ToLower().Contains(inputText)).ToList();
+
             List<DmManager.Player> filteredList = suggestionList.Where(item => item.Name.ToLower().Contains(inputText)).ToList();
 
             listSuggestions.ItemsSource = filteredList;
@@ -153,10 +153,10 @@ namespace UserControls
             suggestionList = JsonConvert.DeserializeObject<List<Player>>(jsonStr);
         }
 
+
         private string AddServerUrlToJson(string jsonStr, string serverUrl)
         {
-            // JSON 문자열을 JObject로 변환
-            // JObject jObject = JsonConvert.DeserializeObject<JObject>(jsonStr);
+            // JSON 문자열을 JArray로 변환
             JArray jArray = JsonConvert.DeserializeObject<JArray>(jsonStr);
 
             // 각 플레이어의 ImgUri에 서버 URL 추가
@@ -171,7 +171,7 @@ namespace UserControls
             // 가공된 JObject를 다시 JSON 문자열로 변환하여 반환
             return jArray.ToString();
         }
-
+ 
 
     }
 }

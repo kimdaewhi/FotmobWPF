@@ -59,28 +59,6 @@ namespace Main
 
         }
 
-        private async void Button_Click(object sender, RoutedEventArgs e)
-        {
-            using var client = new HttpClient();
-            var playerId = "654096"; // 원하는 플레이어 ID
-
-            // var response = await client.GetAsync($"https://localhost:7064/api/Players/details/{playerId}");
-            var response = await client.GetAsync($"http://13.124.254.65:8080/api/Players/details/{playerId}");
-            if (response.IsSuccessStatusCode)
-            {
-                var jsonString = await response.Content.ReadAsStringAsync();
-                var player = JsonConvert.DeserializeObject<DmManager.Player>(jsonString);
-
-                // 반환된 player 객체를 사용합니다.
-                Debug.WriteLine($"Player Name: {player.Name}, Role: {player.Role}");
-                MessageBox.Show(player.Name + ", " + player.Position + ", " + player.Age);
-            }
-            else
-            {
-                Debug.WriteLine($"Failed to fetch player. StatusCode: {response.StatusCode}");
-            }
-        }
-
 
     }
 }

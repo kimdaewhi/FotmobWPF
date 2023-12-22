@@ -27,7 +27,6 @@
                 <!-- 새로운 행의 콘텐츠 -->
             </Border>
             <Image Source="Properties/imgs/fotmob_logo.png" Height="50" Margin="117,26,134,24" Width="130" MouseEnter="Image_MouseEnter" MouseLeave="Image_MouseLeave" MouseDown="Image_MouseDown"/>
-            <Button Content="통신 테스트" Grid.Column="2" Margin="18,18,340,24" Click="Button_Click"/>
         </Grid>
         <!--<ScrollViewer VerticalScrollBarVisibility="Auto">-->
         <Frame x:Name="ContentFrame" NavigationUIVisibility="Hidden" Width="1300" Height="700" Grid.Row="1" VerticalAlignment="Bottom"/>

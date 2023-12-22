@@ -54,12 +54,12 @@
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
                         <!-- 이미지 -->
-                        <!--<Image Source="{Binding ImgUri}" Width="30" Height="30"/>-->
-                        <Image Width="30" Height="30">
+                        <Image Source="{Binding ImgUri}" Width="30" Height="30"/>
+                        <!--<Image Width="30" Height="30">
                             <Image.Source>
                                 <BitmapImage UriSource="{Binding ImgUri, StringFormat='{}http://13.124.254.65:8080/{0}'}"/>
                             </Image.Source>
-                        </Image>
+                        </Image>-->
 
                         <!-- 텍스트 -->
                         <TextBlock Text="{Binding Name}" Margin="5,0,0,0" FontFamily="NanumGothic" FontSize="17" VerticalAlignment="Center"/>
