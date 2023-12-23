@@ -53,8 +53,7 @@
             <!-- Player -->
             <TextBlock x:Name="txtBlock_Name" HorizontalAlignment="Left" 
                        TextWrapping="Wrap" Text="{Binding SelectedPlayerDetail.Name}" VerticalAlignment="Top" FontSize="31" 
-                       Grid.Row="0" Grid.Column="0" FontFamily="NanumGothic" FontWeight="Bold" Foreground="White" Margin="144,39,0,0"/>
-            <!--<Image x:Name="playerImg" Source="../Properties/players/1021586.png" Width="80" Height="80" Grid.Column="0" Grid.Row="0" VerticalAlignment="Bottom" Margin="32,0,311,0" />-->
+                       Grid.Row="0" Grid.Column="0" FontFamily="NanumGothic" FontWeight="Bold" Foreground="White" Margin="144,39,0,0" Width="402" Grid.ColumnSpan="3"/>
             <Image x:Name="playerImg" Source="{Binding SelectedPlayerDetail.ImgUri}" Width="80" Height="80" Grid.Column="0" Grid.Row="0" VerticalAlignment="Bottom" Margin="32,0,311,0" />
 
             <!-- Team -->
