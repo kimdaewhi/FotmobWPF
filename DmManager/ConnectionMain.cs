@@ -8,15 +8,15 @@ namespace DmManager
     {
         private static HttpClient _client = new HttpClient();
 
-        private static List<Player> _players; // 중앙 저장소
-        private static bool _playersLoaded = false; // 중앙 저장소가 로드되었는지 여부
+        private static List<Player> _players;       // 중앙 저장소
+        private static bool _playersLoaded = false; // 중앙 저장소 로드 여부
 
         public List<Player> GetPlayers()
         {
             return _players;
         }
 
-        // 싱글톤 인스턴스
+        // Singleton Instance
         private static ConnectionMain _instance;
         public static ConnectionMain Instance => _instance ??= new ConnectionMain();
 
@@ -25,6 +25,10 @@ namespace DmManager
         private ConnectionMain() { }
 
 
+        /// <summary>
+        /// 선수 List 조회
+        /// </summary>
+        /// <returns></returns>
         public static async Task<string?> GetPlayerList()
         {
             HttpResponseMessage response = await _client.GetAsync("http://13.124.254.65:8080/api/Players/list/");
@@ -39,6 +43,11 @@ namespace DmManager
         }
 
 
+        /// <summary>
+        /// 선수 세부 정보 조회
+        /// </summary>
+        /// <param name="playerID">선수 ID</param>
+        /// <returns>선수 정보 인스턴스 반환</returns>
         public static async Task<Player> GetPlayerDetail(string playerID)
         {
             // 이 메서드가 구지 필요한지는 나중에 생각좀 해보자
@@ -62,6 +71,10 @@ namespace DmManager
         }
 
 
+        /// <summary>
+        /// 플레이어 중앙 저장소(_players) 데이터 로드 여부
+        /// </summary>
+        /// <returns></returns>
         public async Task LoadPlayersIfNeeded()
         {
             if (!_playersLoaded)
@@ -86,6 +99,12 @@ namespace DmManager
         }
 
 
+        /// <summary>
+        /// 선수 이미지에 서버 정보 바인딩
+        /// </summary>
+        /// <param name="jsonStr"></param>
+        /// <param name="serverUrl"></param>
+        /// <returns></returns>
         private string AddServerUrlToJson(string jsonStr, string serverUrl)
         {
             // JSON 문자열을 JArray로 변환
@@ -104,6 +123,12 @@ namespace DmManager
             return jArray.ToString();
         }
 
+
+        /// <summary>
+        /// store에서 선수 세부정보 조회
+        /// </summary>
+        /// <param name="playerId"></param>
+        /// <returns></returns>
         public Player GetPlayerById(string playerId)
         {
             return _players.FirstOrDefault(player => player.Id == playerId);

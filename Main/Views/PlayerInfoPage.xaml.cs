@@ -25,7 +25,6 @@ namespace Main.Views
         private string _playerID;
         Player _selectedPlayer;
 
-        // public string FormattedMarketValue => $"{(_selectedPlayer?.MarketValue ?? 0) / 1000000} M";
         public string FormattedMarketValue = string.Empty;
 
         public PlayerInfoPage(string playerID)
@@ -37,6 +36,9 @@ namespace Main.Views
             
         }
 
+        /// <summary>
+        /// 플레이어 정보 Init(시장가치 단위 변경)
+        /// </summary>
         private async void InitPlayerInfoAsync()
         {
             _selectedPlayer = ConnectionMain.Instance.GetPlayerById(_playerID);

@@ -50,7 +50,11 @@ namespace Main
         }
 
 
-        // Autocomplete의 ID 업데이트 여부 받는 콜백 함수
+        /// <summary>
+        /// Autocomplete의 ID Update 콜백 함수
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="updatedID"></param>
         private void AutoComplete_IDUpdated(object sender, string updatedID)
         {
             // 업데이트된 ID 값을 이용한 로직을 처리

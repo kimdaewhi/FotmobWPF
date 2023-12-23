@@ -46,12 +46,16 @@ namespace UserControls
         }
 
 
+        /// <summary>
+        /// 자동 완성 기능
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void autoComplete_TextChanged(object sender, TextChangedEventArgs e)
         {
             string inputText = txtInput.Text.ToLower();
 
             List<DmManager.Player> filteredList = suggestionList.Where(item => item.Name.ToLower().Contains(inputText)).ToList();
-
             listSuggestions.ItemsSource = filteredList;
 
             if (inputText != string.Empty)
@@ -66,12 +70,23 @@ namespace UserControls
 
         }
 
+
+        /// <summary>
+        /// ID 업데이트 Callback Method
+        /// </summary>
+        /// <param name="id"></param>
         protected virtual void OnIDUpdated(string id)
         {
             // id값 변화에 따른 callback 메서드
             IDUpdated?.Invoke(this, id);
         }
 
+
+        /// <summary>
+        /// 필터 ListBox 키보드 이동 이벤트
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtInput_PreviewKeyDown(object sender, KeyEventArgs e)
         {
             if (listSuggestions.Visibility == Visibility.Visible)
@@ -114,16 +129,23 @@ namespace UserControls
             }
         }
 
+
+
         private void txtInput_MouseDown(object sender, MouseButtonEventArgs e)
         {
             txtInput.Focus();
         }
 
+
+        /// <summary>
+        /// 필터 ListBox 마우스 클릭 이벤트(selectedID 업데이트)
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void listSuggestions_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             if (listSuggestions.SelectedIndex != -1)
             {
-                // var selectedItem = (PlayerOrClubItem)listSuggestions.SelectedItem;
                 var selectedItem = (Player)listSuggestions.SelectedItem;
                 txtInput.Text = selectedItem.Name;
 
@@ -136,6 +158,9 @@ namespace UserControls
             }
         }
 
+        /// <summary>
+        /// Autocomplete Clear
+        /// </summary>
         public void Clear()
         {
             this.txtInput.Clear();
@@ -143,39 +168,17 @@ namespace UserControls
         }
 
 
+        /// <summary>
+        /// 선수 리스트 조회
+        /// </summary>
         private async void LoadPlayers()
         {
-            //string? jsonStr = await DmManager.ConnectionMain.GetPlayerList();
-
-            //// Image Uri 변경
-            //string serverUrl = "http://13.124.254.65:8080/";
-            //jsonStr = AddServerUrlToJson(jsonStr, serverUrl);
-
-            //suggestionList = JsonConvert.DeserializeObject<List<Player>>(jsonStr);
-
             await DmManager.ConnectionMain.Instance.LoadPlayersIfNeeded();
             suggestionList = DmManager.ConnectionMain.Instance.GetPlayers();
         }
 
 
-        private string AddServerUrlToJson(string jsonStr, string serverUrl)
-        {
-            // JSON 문자열을 JArray로 변환
-            JArray jArray = JsonConvert.DeserializeObject<JArray>(jsonStr);
 
-            // 각 플레이어의 ImgUri에 서버 URL 추가
-            foreach (JObject player in jArray)
-            {
-                if (player["imgUri"] != null)
-                {
-                    player["imgUri"] = serverUrl + player["imgUri"].ToString();
-                }
-            }
-
-            // 가공된 JObject를 다시 JSON 문자열로 변환하여 반환
-            return jArray.ToString();
-        }
- 
 
     }
 }
