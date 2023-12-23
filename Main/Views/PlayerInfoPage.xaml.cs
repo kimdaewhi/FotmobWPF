@@ -52,30 +52,16 @@ namespace Main.Views
         }
 
         /// <summary>
-        /// 플레이어 정보 Init(시장가치 단위 변경)
+        /// 플레이어 정보 Init(선수정보, 국적, 팀 정보)
         /// </summary>
         private async void InitPlayerInfoAsync()
         {
-            //_selectedPlayer = PlayerController.Instance.GetPlayerById(_playerID);
-            //_selectedPlayer.MarketValue = (_selectedPlayer.MarketValue / 1000000);
-
-
-            //_playerNation = await NationController.GetNationDetail(_selectedPlayer.NationID);
-
-            //this.DataContext = _selectedPlayer;
             viewModels.SelectedPlayerDetail = PlayerController.Instance.GetPlayerById(_playerID);
             viewModels.SelectedPlayerDetail.MarketValue = (viewModels.SelectedPlayerDetail.MarketValue / 1000000);
 
             viewModels.SelectedPlayerNation = await NationController.GetNationDetail(viewModels.SelectedPlayerDetail.NationID);
 
             this.DataContext = viewModels;
-        }
-
-
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            // MessageBox.Show("플레이어 : " + _selectedPlayer.Id + ", " + _selectedPlayer.Name + ", " + _selectedPlayer.Birth + ", " + _selectedPlayer.MarketValue);
         }
 
 
