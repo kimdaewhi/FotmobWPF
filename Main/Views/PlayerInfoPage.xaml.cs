@@ -1,4 +1,5 @@
 ﻿using DmManager;
+using DmManager.Controller;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -23,13 +24,27 @@ namespace Main.Views
     public partial class PlayerInfoPage : Page
     {
         private string _playerID;
-        Player _selectedPlayer;
+
+        // Player _selectedPlayer;
+        // Nation _playerNation;
+
+        public partial class PlayerInfoViewModel
+        {
+            public Player SelectedPlayerDetail { get; set; }
+            public Nation SelectedPlayerNation { get; set; }
+        }
+        private PlayerInfoViewModel viewModels;
 
         public string FormattedMarketValue = string.Empty;
+
+
+
 
         public PlayerInfoPage(string playerID)
         {
             InitializeComponent();
+            viewModels = new PlayerInfoViewModel();
+
 
             this._playerID = playerID;
             InitPlayerInfoAsync();
@@ -41,16 +56,26 @@ namespace Main.Views
         /// </summary>
         private async void InitPlayerInfoAsync()
         {
-            _selectedPlayer = ConnectionMain.Instance.GetPlayerById(_playerID);
-            _selectedPlayer.MarketValue = (_selectedPlayer.MarketValue / 1000000);
-            this.DataContext = _selectedPlayer;
+            //_selectedPlayer = PlayerController.Instance.GetPlayerById(_playerID);
+            //_selectedPlayer.MarketValue = (_selectedPlayer.MarketValue / 1000000);
+
+
+            //_playerNation = await NationController.GetNationDetail(_selectedPlayer.NationID);
+
+            //this.DataContext = _selectedPlayer;
+            viewModels.SelectedPlayerDetail = PlayerController.Instance.GetPlayerById(_playerID);
+            viewModels.SelectedPlayerDetail.MarketValue = (viewModels.SelectedPlayerDetail.MarketValue / 1000000);
+
+            viewModels.SelectedPlayerNation = await NationController.GetNationDetail(viewModels.SelectedPlayerDetail.NationID);
+
+            this.DataContext = viewModels;
         }
 
 
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("플레이어 : " + _selectedPlayer.Id + ", " + _selectedPlayer.Name + ", " + _selectedPlayer.Birth + ", " + _selectedPlayer.MarketValue);
+            // MessageBox.Show("플레이어 : " + _selectedPlayer.Id + ", " + _selectedPlayer.Name + ", " + _selectedPlayer.Birth + ", " + _selectedPlayer.MarketValue);
         }
 
 

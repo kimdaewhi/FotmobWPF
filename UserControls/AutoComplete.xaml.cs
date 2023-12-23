@@ -1,4 +1,5 @@
 ﻿using DmManager;
+using DmManager.Controller;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
@@ -173,8 +174,8 @@ namespace UserControls
         /// </summary>
         private async void LoadPlayers()
         {
-            await DmManager.ConnectionMain.Instance.LoadPlayersIfNeeded();
-            suggestionList = DmManager.ConnectionMain.Instance.GetPlayers();
+            await PlayerController.Instance.LoadPlayersIfNeeded();
+            suggestionList = PlayerController.Instance.GetPlayers();
         }
 
 

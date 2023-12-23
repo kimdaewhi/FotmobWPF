@@ -65,9 +65,4 @@
     </EmbeddedResource>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="Resources\" />
-  </ItemGroup>
-
 </Project>

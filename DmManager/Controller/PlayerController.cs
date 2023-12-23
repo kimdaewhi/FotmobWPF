@@ -2,9 +2,9 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace DmManager
+namespace DmManager.Controller
 {
-    public class ConnectionMain
+    public class PlayerController
     {
         private static HttpClient _client = new HttpClient();
 
@@ -17,12 +17,12 @@ namespace DmManager
         }
 
         // Singleton Instance
-        private static ConnectionMain _instance;
-        public static ConnectionMain Instance => _instance ??= new ConnectionMain();
+        private static PlayerController _instance;
+        public static PlayerController Instance => _instance ??= new PlayerController();
 
 
 
-        private ConnectionMain() { }
+        private PlayerController() { }
 
 
         /// <summary>

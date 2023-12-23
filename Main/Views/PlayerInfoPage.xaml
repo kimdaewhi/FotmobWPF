@@ -49,10 +49,10 @@
 
             <!-- Player -->
             <TextBlock x:Name="txtBlock_Name" HorizontalAlignment="Left" 
-                       TextWrapping="Wrap" Text="{Binding Name}" VerticalAlignment="Top" FontSize="31" 
+                       TextWrapping="Wrap" Text="{Binding SelectedPlayerDetail.Name}" VerticalAlignment="Top" FontSize="31" 
                        Grid.Row="0" Grid.Column="0" FontFamily="NanumGothic" FontWeight="Bold" Foreground="White" Margin="144,39,0,0"/>
             <!--<Image x:Name="playerImg" Source="../Properties/players/1021586.png" Width="80" Height="80" Grid.Column="0" Grid.Row="0" VerticalAlignment="Bottom" Margin="32,0,311,0" />-->
-            <Image x:Name="playerImg" Source="{Binding ImgUri}" Width="80" Height="80" Grid.Column="0" Grid.Row="0" VerticalAlignment="Bottom" Margin="32,0,311,0" />
+            <Image x:Name="playerImg" Source="{Binding SelectedPlayerDetail.ImgUri}" Width="80" Height="80" Grid.Column="0" Grid.Row="0" VerticalAlignment="Bottom" Margin="32,0,311,0" />
 
             <!-- Team -->
             <TextBlock x:Name="txtBlock_Team" HorizontalAlignment="Left" 
@@ -73,31 +73,31 @@
                 </Grid.RowDefinitions>
 
                 <!-- Row 0 -->
-                <TextBlock Grid.Row="0" Grid.Column="0" TextWrapping="Wrap" Text="{Binding Height, StringFormat={}{0} cm}" FontFamily="NanumGothic" FontSize="14" Margin="24,24,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontWeight="Bold"/>
+                <TextBlock Grid.Row="0" Grid.Column="0" TextWrapping="Wrap" Text="{Binding SelectedPlayerDetail.Height, StringFormat={}{0} cm}" FontFamily="NanumGothic" FontSize="14" Margin="24,24,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontWeight="Bold"/>
                 <TextBlock Grid.Row="0" Grid.Column="0" TextWrapping="Wrap" Text="키" FontFamily="NanumGothic" FontSize="12" Margin="24,49,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="#FF717171"/>
                 <Border Grid.Row="0" Grid.Column="0" BorderThickness="1" BorderBrush="LightGray" Margin="24,74,10,12"/>
 
-                <TextBlock Grid.Row="0" Grid.Column="1" TextWrapping="Wrap" Text="{Binding ShirtNum}" FontFamily="NanumGothic" FontSize="14" Margin="24,24,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontWeight="Bold"/>
+                <TextBlock Grid.Row="0" Grid.Column="1" TextWrapping="Wrap" Text="{Binding SelectedPlayerDetail.ShirtNum}" FontFamily="NanumGothic" FontSize="14" Margin="24,24,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontWeight="Bold"/>
                 <TextBlock Grid.Row="0" Grid.Column="1" TextWrapping="Wrap" Text="셔츠" FontFamily="NanumGothic" FontSize="12" Margin="24,49,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="#FF717171"/>
                 <Border Grid.Row="0" Grid.Column="1" BorderThickness="1" BorderBrush="LightGray" Margin="24,74,10,12"/>
 
                 <!-- Row 1 -->
-                <TextBlock Grid.Row="1" Grid.Column="0" TextWrapping="Wrap" Text="{Binding Age, StringFormat={}{0} 살}" FontFamily="NanumGothic" FontSize="14" Margin="24,17,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontWeight="Bold"/>
-                <TextBlock Grid.Row="1" Grid.Column="0" TextWrapping="Wrap" Text="{Binding Birth, StringFormat={}{0:yyyy.MM.dd}}" FontFamily="NanumGothic" FontSize="12" Margin="24,40,0,0" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="#FF717171"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" TextWrapping="Wrap" Text="{Binding SelectedPlayerDetail.Age, StringFormat={}{0} 살}" FontFamily="NanumGothic" FontSize="14" Margin="24,17,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontWeight="Bold"/>
+                <TextBlock Grid.Row="1" Grid.Column="0" TextWrapping="Wrap" Text="{Binding SelectedPlayerDetail.Birth, StringFormat={}{0:yyyy.MM.dd}}" FontFamily="NanumGothic" FontSize="12" Margin="24,40,0,0" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="#FF717171"/>
                 <Border Grid.Row="1" Grid.Column="0" BorderThickness="1" BorderBrush="LightGray" Margin="24,67,10,19"/>
 
                 <TextBlock Grid.Row="1" Grid.Column="1" TextWrapping="Wrap" FontFamily="NanumGothic" FontSize="14" Margin="24,17,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontWeight="Bold">
                     <TextBlock.Style>
                         <Style TargetType="TextBlock">
-                            <Setter Property="Text" Value="{Binding Foot}" />
+                            <Setter Property="Text" Value="{Binding SelectedPlayerDetail.Foot}" />
                             <Style.Triggers>
-                                <DataTrigger Binding="{Binding Foot}" Value="L">
+                                <DataTrigger Binding="{Binding SelectedPlayerDetail.Foot}" Value="L">
                                     <Setter Property="Text" Value="왼발" />
                                 </DataTrigger>
-                                <DataTrigger Binding="{Binding Foot}" Value="R">
+                                <DataTrigger Binding="{Binding SelectedPlayerDetail.Foot}" Value="R">
                                     <Setter Property="Text" Value="오른발" />
                                 </DataTrigger>
-                                <DataTrigger Binding="{Binding Foot}" Value="B">
+                                <DataTrigger Binding="{Binding SelectedPlayerDetail.Foot}" Value="B">
                                     <Setter Property="Text" Value="양발" />
                                 </DataTrigger>
                             </Style.Triggers>
@@ -108,11 +108,13 @@
                 <Border Grid.Row="1" Grid.Column="1" BorderThickness="1" BorderBrush="LightGray" Margin="24,67,10,19"/>
 
                 <!-- Row 2 -->
-                <TextBlock Grid.Row="2" Grid.Column="0" TextWrapping="Wrap" Text="브라질" FontFamily="NanumGothic" FontSize="14" Margin="24,13,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontWeight="Bold"/>
+                <Image x:Name="nationImg" Source="{Binding SelectedPlayerNation.ImgUri}" Width="15" Height="15" Grid.Column="0" Grid.Row="2" VerticalAlignment="Bottom" Margin="25,0,172,59" />
+                <TextBlock Grid.Row="2" Grid.Column="0" TextWrapping="Wrap" Text="{Binding SelectedPlayerNation.NameKO}" FontFamily="NanumGothic" FontSize="14" Margin="46,13,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontWeight="Bold"/>
                 <TextBlock Grid.Row="2" Grid.Column="0" TextWrapping="Wrap" Text="국가" FontFamily="NanumGothic" FontSize="12" Margin="24,38,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="#FF717171"/>
 
-                <TextBlock Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" Text="{Binding MarketValue, StringFormat={}€{0}M}" FontFamily="NanumGothic" FontSize="14" Margin="24,13,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontWeight="Bold"/>
+                <TextBlock Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" Text="{Binding SelectedPlayerDetail.MarketValue, StringFormat={}€{0}M}" FontFamily="NanumGothic" FontSize="14" Margin="24,13,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" FontWeight="Bold"/>
                 <TextBlock Grid.Row="2" Grid.Column="1" TextWrapping="Wrap" Text="시장 가치" FontFamily="NanumGothic" FontSize="12" Margin="24,38,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Foreground="#FF717171"/>
+                
 
 
             </Grid>
@@ -127,7 +129,5 @@
         <TextBlock x:Name="textBlock5" HorizontalAlignment="Center" TextWrapping="Wrap" Text="선수 특성" VerticalAlignment="Center" FontSize="45" Grid.Column="2"/>
         <TextBlock x:Name="textBlock6" HorizontalAlignment="Center" TextWrapping="Wrap" Text="경력" VerticalAlignment="Center" FontSize="45" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2"/>
         <TextBlock x:Name="textBlock7" HorizontalAlignment="Center" TextWrapping="Wrap" Text="트로피" VerticalAlignment="Center" FontSize="45" Grid.Row="3" Grid.Column="2"/>
-
-        <Button Content="Test" Grid.Column="2" Margin="71,42,185,326" Click="Button_Click"/>
     </Grid>
 </Page>
