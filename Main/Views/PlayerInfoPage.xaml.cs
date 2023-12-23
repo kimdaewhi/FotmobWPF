@@ -30,8 +30,9 @@ namespace Main.Views
 
         public partial class PlayerInfoViewModel
         {
-            public Player SelectedPlayerDetail { get; set; }
-            public Nation SelectedPlayerNation { get; set; }
+            public Player? SelectedPlayerDetail { get; set; }
+            public Nation? SelectedPlayerNation { get; set; }
+            public Team? SelectedPlayerTeam { get; set; }
         }
         private PlayerInfoViewModel viewModels;
 
@@ -60,6 +61,7 @@ namespace Main.Views
             viewModels.SelectedPlayerDetail.MarketValue = (viewModels.SelectedPlayerDetail.MarketValue / 1000000);
 
             viewModels.SelectedPlayerNation = await NationController.GetNationDetail(viewModels.SelectedPlayerDetail.NationID);
+            viewModels.SelectedPlayerTeam = await TeamController.GetTeamDetail(viewModels.SelectedPlayerDetail.ClubID);
 
             this.DataContext = viewModels;
         }

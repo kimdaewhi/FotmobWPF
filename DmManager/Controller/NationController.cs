@@ -14,7 +14,7 @@ namespace DmManager.Controller
         private static HttpClient _client = new HttpClient();
 
         private static List<Nation> _nations;       // 중앙 저장소
-        private static bool _playersLoaded = false; // 중앙 저장소 로드 여부
+        private static bool _teamsLoaded = false; // 중앙 저장소 로드 여부
 
         public List<Nation> GetNations()
         {

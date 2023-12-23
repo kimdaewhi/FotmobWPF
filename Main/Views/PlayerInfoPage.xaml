@@ -37,8 +37,11 @@
                 <RowDefinition Height="260"/>
             </Grid.RowDefinitions>
 
-            <Border Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0"
+            <!--<Border Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0"
                     Background="#FFBD0510"
+                    CornerRadius="20, 20, 0, 0"/>-->
+            <Border Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0"
+                    Background="{Binding SelectedPlayerTeam.ColorCode}"
                     CornerRadius="20, 20, 0, 0"/>
 
             <Border Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1"
@@ -56,9 +59,9 @@
 
             <!-- Team -->
             <TextBlock x:Name="txtBlock_Team" HorizontalAlignment="Left" 
-                       TextWrapping="Wrap" Text="Arsenal" VerticalAlignment="Top" FontSize="17" 
+                       TextWrapping="Wrap" Text="{Binding SelectedPlayerTeam.TeamName}" VerticalAlignment="Top" FontSize="17" 
                        Grid.Row="0" FontFamily="NanumGothic" FontWeight="Bold" Foreground="White" Margin="173,80,0,0"/>
-            <Image x:Name="teamImg" Source="../Properties/teams/9825.png" Width="20" Height="20" Grid.Column="0" Grid.Row="0" VerticalAlignment="Bottom" Margin="144,0,259,10" />
+            <Image x:Name="teamImg" Source="{Binding SelectedPlayerTeam.ImgUri}" Width="20" Height="20" Grid.Column="0" Grid.Row="0" VerticalAlignment="Bottom" Margin="144,0,259,10" />
 
             <Grid x:Name="PlayerDetailGrid" Grid.Column="0" Grid.Row="2" Grid.RowSpan="2">
                 <Grid.ColumnDefinitions>
