@@ -132,6 +132,7 @@ namespace Main.Views
             // Sub 포지션 렌더
             if (viewModels.SelectedPlayerDetail.Position.Split(',').Length > 1)
             {
+                txt_otherPosionLabel.Visibility = Visibility.Visible;
                 for (int i = 1; i < viewModels.SelectedPlayerDetail.Position.Split(',').Length; i++)
                 {
                     string currSubPos = (viewModels.SelectedPlayerDetail.Position.Split(',')[i].Trim());
@@ -148,8 +149,13 @@ namespace Main.Views
                     }
                     txt_otherPosition.Text += positionKor[viewModels.SelectedPlayerDetail.Position.Split(',')[i].Trim()] + ", ";
                 }
+                txt_otherPosition.Text = txt_otherPosition.Text.Substring(0, txt_otherPosition.Text.Length - 2);
             }
-            txt_otherPosition.Text = txt_otherPosition.Text.Substring(0, txt_otherPosition.Text.Length - 2);
+            else
+            {
+                txt_otherPosionLabel.Visibility = Visibility.Hidden;
+            }
+            
 
 
         }

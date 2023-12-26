@@ -125,7 +125,7 @@
             <TextBlock Grid.Row="1" Grid.Column="2" Text="기본" FontSize="16" Margin="28,60,345,180" TextAlignment="Left" Foreground="{Binding SelectedPlayerTeam.ColorCode}" Height="20" FontFamily="NanumGothic"/>
             <TextBlock x:Name="txt_basePosition" Grid.Row="1" Grid.Column="2" Text="" Margin="28,84,223,158" TextAlignment="Left" Foreground="#FF717171" FontFamily="NanumGothic"/>
 
-            <TextBlock Grid.Row="1" Grid.Column="2" Text="기타" FontSize="16" Margin="28,124,345,116" TextAlignment="Left" Foreground="#FF717171" Height="20" FontFamily="NanumGothic"/>
+            <TextBlock x:Name="txt_otherPosionLabel"  Grid.Row="1" Grid.Column="2" Text="기타" FontSize="16" Margin="28,124,345,116" TextAlignment="Left" Foreground="#FF717171" Height="20" FontFamily="NanumGothic"/>
             <TextBlock x:Name="txt_otherPosition" Grid.Row="1" Grid.Column="2" TextWrapping="Wrap" Text="" Margin="28,148,223,43" TextAlignment="Left" Foreground="#FF717171" FontFamily="NanumGothic"/>
 
             <!-- Position Graphic -->
