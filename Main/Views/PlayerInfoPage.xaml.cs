@@ -3,7 +3,9 @@ using DmManager.Controller;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -25,9 +27,6 @@ namespace Main.Views
     {
         private string _playerID;
 
-        // Player _selectedPlayer;
-        // Nation _playerNation;
-
         public partial class PlayerInfoViewModel
         {
             public Player? SelectedPlayerDetail { get; set; }
@@ -35,10 +34,6 @@ namespace Main.Views
             public Team? SelectedPlayerTeam { get; set; }
         }
         private PlayerInfoViewModel viewModels;
-
-        public string FormattedMarketValue = string.Empty;
-
-
 
 
         public PlayerInfoPage(string playerID)
@@ -58,7 +53,8 @@ namespace Main.Views
         private async void InitPlayerInfoAsync()
         {
             viewModels.SelectedPlayerDetail = PlayerController.Instance.GetPlayerById(_playerID);
-            viewModels.SelectedPlayerDetail.MarketValue = (viewModels.SelectedPlayerDetail.MarketValue / 1000000);
+            // 변경된 포맷으로 데이터 바인딩
+            txt_playerMarketValue.Text = "€" + (viewModels.SelectedPlayerDetail.MarketValue / 1000000.0).ToString() + "M";
 
             viewModels.SelectedPlayerNation = await NationController.GetNationDetail(viewModels.SelectedPlayerDetail.NationID);
             viewModels.SelectedPlayerTeam = await TeamController.GetTeamDetail(viewModels.SelectedPlayerDetail.ClubID);

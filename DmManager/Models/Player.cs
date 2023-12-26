@@ -19,7 +19,7 @@ namespace DmManager
         public string? ClubID { get; set; }
         public int ShirtNum { get; set; }
         public string? Foot { get; set; }
-        public int MarketValue { get; set; }
+        public double MarketValue { get; set; }
         public string? ImgUri { get; set; }
         public string? NationID { get; set; }
     }
