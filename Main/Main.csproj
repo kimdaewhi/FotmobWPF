@@ -12,13 +12,6 @@
     <None Remove="Properties\imgs\fotmob.png" />
     <None Remove="Properties\imgs\fotmob_logo.png" />
     <None Remove="Properties\imgs\search.png" />
-    <None Remove="Properties\players\1021586.png" />
-    <None Remove="Properties\players\282775.png" />
-    <None Remove="Properties\players\434325.png" />
-    <None Remove="Properties\players\576165.png" />
-    <None Remove="Properties\players\776151.png" />
-    <None Remove="Properties\players\961995.png" />
-    <None Remove="Properties\teams\9825.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,20 +27,6 @@
     <Resource Include="Properties\imgs\fotmob.png" />
     <Resource Include="Properties\imgs\fotmob_logo.png" />
     <Resource Include="Properties\imgs\search.png" />
-    <Resource Include="Properties\players\1021586.png">
-    </Resource>
-    <Resource Include="Properties\players\282775.png">
-    </Resource>
-    <Resource Include="Properties\players\434325.png">
-    </Resource>
-    <Resource Include="Properties\players\576165.png">
-    </Resource>
-    <Resource Include="Properties\players\776151.png">
-    </Resource>
-    <Resource Include="Properties\players\961995.png">
-    </Resource>
-    <Resource Include="Properties\teams\9825.png">
-    </Resource>
   </ItemGroup>
 
   <ItemGroup>
