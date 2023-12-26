@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Properties\imgs\field.png" />
     <None Remove="Properties\imgs\fotmob.ico" />
     <None Remove="Properties\imgs\fotmob.png" />
     <None Remove="Properties\imgs\fotmob_logo.png" />
@@ -23,6 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Properties\imgs\field.png" />
     <Resource Include="Properties\imgs\fotmob.ico" />
     <Resource Include="Properties\imgs\fotmob.png" />
     <Resource Include="Properties\imgs\fotmob_logo.png" />
