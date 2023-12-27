@@ -13,6 +13,7 @@
     <None Remove="Properties\imgs\fotmob.png" />
     <None Remove="Properties\imgs\fotmob_logo.png" />
     <None Remove="Properties\imgs\search.png" />
+    <None Remove="Properties\imgs\tooltip.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,6 +30,7 @@
     <Resource Include="Properties\imgs\fotmob.png" />
     <Resource Include="Properties\imgs\fotmob_logo.png" />
     <Resource Include="Properties\imgs\search.png" />
+    <Resource Include="Properties\imgs\tooltip.png" />
   </ItemGroup>
 
   <ItemGroup>
