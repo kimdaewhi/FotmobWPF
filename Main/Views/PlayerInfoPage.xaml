@@ -132,36 +132,36 @@
             <Image Source="../Properties/imgs/field.png" Grid.Column="2" Height="Auto" Width="Auto" Margin="252,20,12,20" Grid.Row="1"/>
 
             <!-- Att -->
-            <Border x:Name="txtPos_ST" Grid.Column="2" Margin="319,29,71,209" Grid.Row="1" Background="#CCA0A0A0" Width="33" Height="22" CornerRadius="9" Visibility="Hidden">
+            <Border x:Name="txtPos_ST" Grid.Column="2" Margin="318,29,72,209" Grid.Row="1" Background="#CCA0A0A0" Width="33" Height="22" CornerRadius="9" Visibility="Hidden">
                 <TextBlock Text="ST" FontFamily="Bahnschrift" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center" Foreground="#FFFFFF" Width="25" Height="17"/>
             </Border>
 
-            <Border x:Name="txtPos_LW" Grid.Column="2" Margin="265,64,125,174" Grid.Row="1" Background="#CCA0A0A0" Width="33" Height="22" CornerRadius="9" Visibility="Hidden">
+            <Border x:Name="txtPos_LW" Grid.Column="2" Margin="264,64,126,174" Grid.Row="1" Background="#CCA0A0A0" Width="33" Height="22" CornerRadius="9" Visibility="Hidden">
                 <TextBlock Text="LW" FontFamily="Bahnschrift" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center" Foreground="#FFFFFF" Width="25" Height="17"/>
             </Border>
 
-            <Border x:Name="txtPos_AM" Grid.Column="2" Margin="319,64,71,174" Grid.Row="1" Background="#CCA0A0A0" Width="33" Height="22" CornerRadius="9" Visibility="Hidden">
+            <Border x:Name="txtPos_AM" Grid.Column="2" Margin="318,64,72,174" Grid.Row="1" Background="#CCA0A0A0" Width="33" Height="22" CornerRadius="9" Visibility="Hidden">
                 <TextBlock Text="AM" FontFamily="Bahnschrift" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center" Foreground="#FFFFFF" Width="25" Height="17"/>
             </Border>
 
-            <Border x:Name="txtPos_RW" Grid.Column="2" Margin="369,64,21,174" Grid.Row="1" Background="#CCA0A0A0" Width="33" Height="22" CornerRadius="9" Visibility="Hidden">
+            <Border x:Name="txtPos_RW" Grid.Column="2" Margin="370,64,20,174" Grid.Row="1" Background="#CCA0A0A0" Width="33" Height="22" CornerRadius="9" Visibility="Hidden">
                 <TextBlock Text="RW" FontFamily="Bahnschrift" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center" Foreground="#FFFFFF" Width="25" Height="17"/>
             </Border>
 
             <!-- Mid -->
-            <Border x:Name="txtPos_LM" Grid.Column="2" Margin="265,98,125,140" Grid.Row="1" Background="#CCA0A0A0" Width="33" Height="22" CornerRadius="9" Visibility="Hidden">
+            <Border x:Name="txtPos_LM" Grid.Column="2" Margin="264,98,126,140" Grid.Row="1" Background="#CCA0A0A0" Width="33" Height="22" CornerRadius="9" Visibility="Hidden">
                 <TextBlock Text="LM" FontFamily="Bahnschrift" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center" Foreground="#FFFFFF" Width="25" Height="17"/>
             </Border>
 
-            <Border x:Name="txtPos_CM" Grid.Column="2" Margin="319,98,71,140" Grid.Row="1" Background="#CCA0A0A0" Width="33" Height="22" CornerRadius="9" Visibility="Hidden">
+            <Border x:Name="txtPos_CM" Grid.Column="2" Margin="318,98,72,140" Grid.Row="1" Background="#CCA0A0A0" Width="33" Height="22" CornerRadius="9" Visibility="Hidden">
                 <TextBlock Text="CM" FontFamily="Bahnschrift" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center" Foreground="#FFFFFF" Width="25" Height="17"/>
             </Border>
 
-            <Border x:Name="txtPos_RM" Grid.Column="2" Margin="368,98,22,140" Grid.Row="1" Background="#CCA0A0A0" Width="33" Height="22" CornerRadius="9" Visibility="Hidden">
+            <Border x:Name="txtPos_RM" Grid.Column="2" Margin="370,98,20,140" Grid.Row="1" Background="#CCA0A0A0" Width="33" Height="22" CornerRadius="9" Visibility="Hidden">
                 <TextBlock Text="RM" FontFamily="Bahnschrift" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center" Foreground="#FFFFFF" Width="25" Height="18"/>
             </Border>
 
-            <Border x:Name="txtPos_DM" Grid.Column="2" Margin="319,139,71,99" Grid.Row="1" Background="#CCA0A0A0" Width="33" Height="22" CornerRadius="9" Visibility="Hidden">
+            <Border x:Name="txtPos_DM" Grid.Column="2" Margin="318,139,72,99" Grid.Row="1" Background="#CCA0A0A0" Width="33" Height="22" CornerRadius="9" Visibility="Hidden">
                 <TextBlock Text="DM" FontFamily="Bahnschrift" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center" Foreground="#FFFFFF" Width="25" Height="17"/>
             </Border>
 
@@ -174,19 +174,19 @@
                 <TextBlock Text="RWB" FontFamily="Bahnschrift" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center" Foreground="#FFFFFF" Width="37" Height="17"/>
             </Border>
 
-            <Border x:Name="txtPos_LB" Grid.Column="2" Margin="265,174,125,64" Grid.Row="1" Background="#CCA0A0A0" Width="33" Height="22" CornerRadius="9" Visibility="Hidden">
+            <Border x:Name="txtPos_LB" Grid.Column="2" Margin="264,174,126,64" Grid.Row="1" Background="#CCA0A0A0" Width="33" Height="22" CornerRadius="9" Visibility="Hidden">
                 <TextBlock Text="LB" FontFamily="Bahnschrift" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center" Foreground="#FFFFFF" Width="25" Height="17"/>
             </Border>
 
-            <Border x:Name="txtPos_RB" Grid.Column="2" Margin="368,174,22,64" Grid.Row="1" Background="#CCA0A0A0" Width="33" Height="22" CornerRadius="9" Visibility="Hidden">
+            <Border x:Name="txtPos_RB" Grid.Column="2" Margin="370,174,20,64" Grid.Row="1" Background="#CCA0A0A0" Width="33" Height="22" CornerRadius="9" Visibility="Hidden">
                 <TextBlock Text="RB" FontFamily="Bahnschrift" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center" Foreground="#FFFFFF" Width="25" Height="18"/>
             </Border>
-            <Border x:Name="txtPos_CB" Grid.Column="2" Margin="319,174,71,64" Grid.Row="1" Background="#CCA0A0A0" Width="33" Height="22" CornerRadius="9" Visibility="Hidden">
+            <Border x:Name="txtPos_CB" Grid.Column="2" Margin="318,174,72,64" Grid.Row="1" Background="#CCA0A0A0" Width="33" Height="22" CornerRadius="9" Visibility="Hidden">
                 <TextBlock Text="CB" FontFamily="Bahnschrift" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center" Foreground="#FFFFFF" Width="25" Height="17"/>
             </Border>
 
             <!--GK-->
-            <Border x:Name="txtPos_GK" Grid.Column="2" Margin="319,210,71,28" Grid.Row="1" Background="#CCA0A0A0" Width="33" Height="22" CornerRadius="9" Visibility="Hidden">
+            <Border x:Name="txtPos_GK" Grid.Column="2" Margin="318,210,72,28" Grid.Row="1" Background="#CCA0A0A0" Width="33" Height="22" CornerRadius="9" Visibility="Hidden">
                 <TextBlock Text="GK" FontFamily="Bahnschrift" FontSize="16" VerticalAlignment="Center" HorizontalAlignment="Center" TextAlignment="Center" Foreground="#FFFFFF" Width="25" Height="17"/>
             </Border>
 
@@ -200,5 +200,6 @@
         <TextBlock x:Name="textBlock5" HorizontalAlignment="Center" TextWrapping="Wrap" Text="선수 특성" VerticalAlignment="Center" FontSize="45" Grid.Column="2"/>
         <TextBlock x:Name="textBlock6" HorizontalAlignment="Center" TextWrapping="Wrap" Text="경력" VerticalAlignment="Center" FontSize="45" Grid.Row="1" Grid.Column="2" Grid.RowSpan="2"/>
         <TextBlock x:Name="textBlock7" HorizontalAlignment="Center" TextWrapping="Wrap" Text="트로피" VerticalAlignment="Center" FontSize="45" Grid.Row="3" Grid.Column="2"/>
+        <Button x:Name="button" Grid.Column="2" Content="Test" HorizontalAlignment="Left" Margin="13,12,0,0" VerticalAlignment="Top" Height="52" Width="153" Click="button_Click"/>
     </Grid>
 </Page>

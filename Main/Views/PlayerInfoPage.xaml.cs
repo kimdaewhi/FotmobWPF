@@ -161,6 +161,41 @@ namespace Main.Views
 
         }
 
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            Dictionary<int, Border> borderControls = new Dictionary<int, Border>
+            {
+                // Att
+                { 1, txtPos_ST },
+                { 2, txtPos_LW },
+                { 3, txtPos_AM },
+                { 4, txtPos_RW },
+
+                // Mid
+                { 5, txtPos_LM },
+                { 6, txtPos_CM },
+                { 7, txtPos_RM },
+                { 8, txtPos_DM },
+
+                // Def
+                { 9, txtPos_LWB },
+                { 10, txtPos_RWB },
+                { 11, txtPos_LB },
+                { 12, txtPos_RB },
+                { 13, txtPos_CB },
+
+                // GK
+                { 14, txtPos_GK },
+            };
+
+            for(int i = 0; i < borderControls.Count; i++)
+            {
+                borderControls[i + 1].Visibility = Visibility.Visible;
+            }
+        }
+
+
+
 
     }
 }
