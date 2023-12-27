@@ -4,12 +4,14 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Security.Permissions;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace UserControls
 {
@@ -56,7 +58,14 @@ namespace UserControls
         {
             string inputText = txtInput.Text.ToLower();
 
-            List<DmManager.Player> filteredList = suggestionList.Where(item => item.Name.ToLower().Contains(inputText)).ToList();
+            CompareInfo compareInfo = CultureInfo.InvariantCulture.CompareInfo;
+            CompareOptions compareOptions = CompareOptions.IgnoreNonSpace | CompareOptions.IgnoreCase;
+
+            // 유니코드 정규화 처리
+            // ex) martin odegaard --> Martin Ødegaard
+            List<DmManager.Player> filteredList = suggestionList
+                .Where(item => compareInfo.IndexOf(item.Name, inputText, compareOptions) >= 0)
+                .ToList();
             listSuggestions.ItemsSource = filteredList;
 
             if (inputText != string.Empty)
