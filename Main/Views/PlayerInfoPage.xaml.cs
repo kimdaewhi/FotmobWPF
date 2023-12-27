@@ -149,6 +149,7 @@ namespace Main.Views
                     }
                     txt_otherPosition.Text += positionKor[viewModels.SelectedPlayerDetail.Position.Split(',')[i].Trim()] + ", ";
                 }
+                // Sub포지션 텍스트 렌더
                 txt_otherPosition.Text = txt_otherPosition.Text.Substring(0, txt_otherPosition.Text.Length - 2);
             }
             else
